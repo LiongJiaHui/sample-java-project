@@ -1,0 +1,85 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = "0.8.8"
+}
+
+java{
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+group 'com.example'
+version = 'V1'
+
+repositories{
+    mavenCentral()
+}
+
+dependencies{
+    implementation 'com.beust:jcommander:1.81'
+    implementation 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+test{
+    testClassesDirs = sourceSets.test.output.classesDirs
+
+    testLogging{
+        events "passed", "skipped", "failed"
+    }
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+
+jar{
+    manifest{
+       attributes(
+           'Main-Class' : 'com.example.SampleJavaProject'
+       ) 
+    }
+
+    from{
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    with copySpec {
+        from sourceSets.main.output
+        into ''
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archiveBaseName.set('sample-java-project')
+    archiveVersion.set('V1')
+    destinationDirectory.set(file("$buildDir/libs"))
+}
+
+jacocoTestReport{
+    reports{
+        xml.required = true
+        html.required = true
+        xml.destination = file("$buildDir/reports/jacoco/xml")
+        html.destination = file("$buildDir/reports/jacoco/html")
+    }
+}
+
+task buildReport{
+    group = 'Reporting'
+    description = 'Generates a summary report of the build, including test and coverage results'
+
+    doLast{
+        println '--- Build Summary ---'
+        println "Build version: ${version}"
+        println "Source Compatibitity: ${sourceCompatibility}"
+        println "Target compatibility: ${targetCompatibility}"
+        println 'Test results: '
+        println "HTML: file:///${buildDir}/reports/tests/index.html"
+        println "JUnit XML: file:///${buildDir}/test-results/test/TEST-TestSuites.xml"
+        println 'Coverage report:'
+        println "HTML: file:///${buildDir}/reports/jacoco/html/index.html"
+        println "XML: file:///${buildDir}/reports/jacoco/xml/jacocoTestReport.xml"
+    }
+}
+
+build.finalizedBy(buildReport) // Ensure the build report is generated after the build
