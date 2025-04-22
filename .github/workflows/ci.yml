@@ -20,9 +20,6 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Grant Execute Permission to Gradle Wrapper
-        run: chmod +x gradlew
-
       - name: Build with Gradle
         run: ./gradlew build
 
