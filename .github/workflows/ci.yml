@@ -23,7 +23,7 @@ jobs:
       - name: Install Gradle
         uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: '7.1.1'
+          gradle-version: '7.6.4'
 
       - name: Build with Gradle
         run: gradle build --stacktrace
