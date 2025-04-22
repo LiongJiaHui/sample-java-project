@@ -42,7 +42,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: irisliong04
-          password: 1R1Sg00d**
+          password: 1R15g00d**
 
       - name: Build Docker image
         run: docker build -t irisliong04/auto_ci:latest .
