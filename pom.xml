@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.liongjiahui</groupId> 
-  <artifactId>ci-demo</artifactId>  
+  <artifactId>sample-java-project</artifactId>  
   <version>1.0.0</version>          
 
   <packaging>jar</packaging>
-  <name>CI Demo</name>
+  <name>Sample Java Project</name>
   <description>A demo Java project using CI with Docker</description>
   <url>https://github.com/LiongJiaHui/ci-demo</url>
 
