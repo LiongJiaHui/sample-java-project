@@ -1,29 +1,37 @@
-<project>
-<modelVersion>4.0.0</modelVersion>
-<groupId>@groupId@</groupId>
-<artifactId>@artifactId@</artifactId>
-<version>@version@</version>
-<packaging>jar</packaging>
-<name>@ant.project.name@</name>
-<description>@description@</description>
-<url>@project.url@</url>
-<licenses>
-<license>
-<name>The Unlicense</name>
-<url>http://unlicense.org/UNLICENSE</url>
-<distribution>repo</distribution>
-</license>
-</licenses>
-<scm>
-<connection> scm:git:@project.repo.url@ </connection>
-<url>@project.scm.url@</url>
-</scm>
-<developers>
-<developer>
-<name>Christopher Wellons</name>
-<email>mosquitopsu@gmail.com</email>
-<url>http://nullprogram.com</url>
-<timezone>-5</timezone>
-</developer>
-</developers>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.liongjiahui</groupId> 
+  <artifactId>ci-demo</artifactId>  
+  <version>1.0.0</version>          
+
+  <packaging>jar</packaging>
+  <name>CI Demo</name>
+  <description>A demo Java project using CI with Docker</description>
+  <url>https://github.com/LiongJiaHui/ci-demo</url>
+
+  <licenses>
+    <license>
+      <name>The Unlicense</name>
+      <url>http://unlicense.org/UNLICENSE</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/LiongJiaHui/ci-demo.git</connection>
+    <url>https://github.com/LiongJiaHui/ci-demo</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>Liong Jia Hui</name>
+      <email>your.email@example.com</email>
+      <url>https://github.com/LiongJiaHui</url>
+      <timezone>+8</timezone>
+    </developer>
+  </developers>
 </project>
