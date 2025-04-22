@@ -7,12 +7,10 @@
   <groupId>com.liongjiahui</groupId> 
   <artifactId>sample-java-project</artifactId>  
   <version>1.0.0</version>          
-
   <packaging>jar</packaging>
   <name>Sample Java Project</name>
   <description>A demo Java project using CI with Docker</description>
   <url>https://github.com/LiongJiaHui/ci-demo</url>
-
   <licenses>
     <license>
       <name>The Unlicense</name>
@@ -20,12 +18,10 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
   <scm>
     <connection>scm:git:https://github.com/LiongJiaHui/ci-demo.git</connection>
     <url>https://github.com/LiongJiaHui/ci-demo</url>
   </scm>
-
   <developers>
     <developer>
       <name>Liong Jia Hui</name>
@@ -35,3 +31,5 @@
     </developer>
   </developers>
 </project>
+
+
