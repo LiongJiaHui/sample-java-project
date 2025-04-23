@@ -4,11 +4,9 @@
   <artifactId>@artifactId@</artifactId>
   <version>@version@</version>
   <packaging>jar</packaging>
-
   <name>@ant.project.name@</name>
   <description>@description@</description>
   <url>@project.url@</url>
-
   <licenses>
     <license>
       <name>The Unlicense</name>
@@ -16,14 +14,12 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
   <scm>
     <connection>
       scm:git:@project.repo.url@
     </connection>
     <url>@project.scm.url@</url>
   </scm>
-
   <developers>
     <developer>
       <name>Christopher Wellons</name>
